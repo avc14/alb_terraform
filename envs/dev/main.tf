@@ -11,12 +11,12 @@ module "vpc" {
 module "subnet" {
   source               = "../../modules/subnet"
   vpc_id               = module.vpc.vpc_id
-  pub_subnet1_cidr     = "172.31.120.0/28"
-  pub_subnet1_az       = "us-east-1d"
-  pub_subnet2_cidr     = "172.31.150.0/28"
-  pub_subnet2_az       = "us-east-1a"
-  private_subnet1_cidr = "172.31.121.0/28"
-  private_subnet1_az   = "us-east-1a"
+  pub_subnet1_cidr     = var.pub_subnet1_cidr
+  pub_subnet1_az       = var.pub_subnet1_az
+  pub_subnet2_cidr     = var.pub_subnet2_cidr
+  pub_subnet2_az       = var.pub_subnet2_az
+  private_subnet1_cidr = var.private_subnet1_cidr
+  private_subnet1_az   = var.private_subnet1_az
 }
 
 module "sg" {
